@@ -26,9 +26,11 @@ Public Sub exportAll()
     processList = ""
     processNameList = ""
     For Each ws In ActiveWorkbook.Worksheets
-        outputcode = outputcode & exportCode(ws)
-        processList = processList & "," & Replace(ws.Name, " ", "_")
-        processNameList = processNameList & ",'" & Replace(ws.Name, " ", "_") & "'"
+        If ws.Name <> "Template" Then
+            outputcode = outputcode & exportCode(ws)
+            processList = processList & "," & Replace(ws.Name, " ", "_")
+            processNameList = processNameList & ",'" & Replace(ws.Name, " ", "_") & "'"
+            End If
     Next
     outputcode = outputcode & vbCrLf
     processList = Right(processList, Len(processList) - 1)
@@ -36,7 +38,7 @@ Public Sub exportAll()
     outputcode = outputcode & "var processes=[" & processList & "];"
     outputcode = outputcode & "var processnames=[" & processNameList & "];"
     Dim jsFile As String
-    jsFile = "C:\Users\Martin Rothe\Desktop\ProcessGuide\Files\excel.js"
+    jsFile = Application.ActiveWorkbook.Path & "\files\excel.js"
     Open jsFile For Output As #1
     Print #1, outputcode
     Close #1
