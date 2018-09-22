@@ -1,0 +1,39 @@
+body {
+    font-family: Verdana;
+}
+img{
+    padding: 30px;
+    max-height:100px;
+}
+.question{
+    background-color:dodgerblue;
+    color: white;
+    margin: 25px;
+    padding: 40px;
+    font-size: 16pt
+}
+.answer{
+    color: white;
+    margin: 40px;
+    padding: 20px;
+    font-size: 16pt;
+    cursor: pointer;
+}
+#answer_yes{
+    background-color: seagreen;
+}
+#answer_no{
+    background-color: firebrick;
+}
+select#processSelect {
+    width: 50%;
+    background-color: rebeccapurple;
+    color: white;
+    margin: 20px;
+    padding: 8px;
+    font-size: 16pt;
+    cursor: pointer;
+}
+option {
+    background-color:dimgrey;
+}
