@@ -7,6 +7,8 @@ Process Guide comprises 2 parts:
 1. An excel/VBA based system for generating/updating processes
 2. An HTML/JS based system for using the processes
 
+Downloading and executing a macro-enabled excel file from the internet clearly has some security implications, I've added the VB script that's executed by excel in a seperate vbs file. You will need to call the ExportAll subrouting manually if you use this as the small window with a handy export button won't be included
+
 Use of the process system:
 + Open the index.html file in your chosen browser
 
